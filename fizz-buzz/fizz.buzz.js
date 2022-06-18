@@ -1,24 +1,29 @@
-const divideBy = (divisor) => (message) => (number) => {
+/**
+ * 
+ * @param divisor
+ * @returns {function(*): function(*): *|string}
+ */
+const divisibleBy = (divisor) => (message) => (number) => {
     return number % divisor === 0 ? message : '';
 };
 
 /**
  *
- * 
+ * @type {function(*): *|string}
  */
-const fizz = divideBy(3)('Fizz');
+const fizz = divisibleBy(3)('Fizz');
 
 /**
  *
- * 
+ * @type {function(*): *|string}
  */
-const buzz = divideBy(5)('Buzz');
+const buzz = divisibleBy(5)('Buzz');
 
 /**
  *
- *
+ * @type {function(*): *|string}
  */
-const foo = divideBy(7)('Foo');
+const foo = divisibleBy(7)('Foo');
 
 /**
  *
