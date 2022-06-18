@@ -1,34 +1,31 @@
-const divide = (divisor) => (message) => (number) => {
+const divideBy = (divisor) => (message) => (number) => {
     return number % divisor === 0 ? message : '';
 };
 
 /**
  *
- * @type {function(*): function(*): *|string}
+ * 
  */
-const divisibleByThree = divide(3);
-const fizz = divisibleByThree('Fizz');
+const fizz = divideBy(3)('Fizz');
 
 /**
  *
- * @type {function(*): function(*): *|string}
+ * 
  */
-const divisibleByFive = divide(5);
-const buzz = divisibleByFive('Buzz');
+const buzz = divideBy(5)('Buzz');
 
 /**
  *
- * @type {function(*): function(*): *|string}
+ *
  */
-const divisibleBySeven = divide(7);
-const foo = divisibleBySeven('Foo');
+const foo = divideBy(7)('Foo');
 
 /**
  *
  * @param operations
  * @returns {function(*): string|string}
  */
-const compute = (...operations) => (number) => {
+const fizzBuzzEngine = (...operations) => (number) => {
     let result = '';
     for (const op of operations) {
         result += op(number);
@@ -39,7 +36,7 @@ const compute = (...operations) => (number) => {
 /**
  *
  */
-export default compute(
+export default fizzBuzzEngine(
     fizz,
     buzz,
     foo
