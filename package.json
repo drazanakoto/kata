@@ -1,0 +1,33 @@
+{
+  "name": "kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest  --passWithNoTests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^28.1.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/?(*.)spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ]
+  },
+  "wallaby": {
+    "env": {
+      "params": {
+        "runner": "--experimental-vm-modules"
+      }
+    }
+  }
+}
