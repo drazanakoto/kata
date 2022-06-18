@@ -1,4 +1,4 @@
-import compute from './fizz.buzz';
+import fizzBuzz from './fizz.buzz';
 
 describe('fizzBuzz Algo', () => {
 
@@ -16,7 +16,7 @@ describe('fizzBuzz Algo', () => {
         ${15}  | ${'FizzBuzz'}
         ${105} | ${'FizzBuzzFoo'}
         `('should return $expected when compute with $number', ({number, expected}) => {
-        const actual = compute(number);
+        const actual = fizzBuzz(number);
         expect(actual).toBe(expected);
     });
 });
