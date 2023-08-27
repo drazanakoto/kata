@@ -51,13 +51,13 @@ function extractSeparatorsAndNumbers(text) {
 
   //multiple separator
   let currentSeparator = '';
-  const separators = [];
+  let separators = '';
   do {
     switch (currentChar) {
       case '[':
         break;
       case ']':
-        separators.push(currentSeparator);
+        separators += separators ? '|' + currentSeparator : currentSeparator;
         currentSeparator = '';
         break;
       default:
@@ -65,10 +65,10 @@ function extractSeparatorsAndNumbers(text) {
     }
     cursorIndex++;
     currentChar = text[cursorIndex];
-  } while (text[cursorIndex] !== '\n');
+  } while (currentChar !== '\n');
 
   return {
     stringNumbers: text.substring(++cursorIndex),
-    separators: new RegExp(separators.join('|')),
+    separators: new RegExp(separators),
   };
 }
